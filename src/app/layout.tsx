@@ -27,7 +27,7 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
 
   return (
     <html lang='en'>
-      <body className={`${inter.className} min-h-screen flex`}>
+      <body className={`${inter.className} min-h-screen`}>
         <Provider>
           <SideNav>
             <main className='w-screen min-h-screen'>{children}</main>
