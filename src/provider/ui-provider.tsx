@@ -1,5 +1,7 @@
 import { TooltipProvider } from '@/components/ui/tooltip';
 
+import { TOOLTIP_DELAY_DURATION } from '@/utils/defaults';
+
 interface UiProviderProps {
   children: React.ReactNode;
 }
@@ -7,7 +9,11 @@ interface UiProviderProps {
 const UiProvider: React.FC<UiProviderProps> = (props) => {
   const { children } = props;
 
-  return <TooltipProvider>{children}</TooltipProvider>;
+  return (
+    <TooltipProvider delayDuration={TOOLTIP_DELAY_DURATION}>
+      {children}
+    </TooltipProvider>
+  );
 };
 
 export default UiProvider;
