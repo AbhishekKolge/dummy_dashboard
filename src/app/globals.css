@@ -75,9 +75,8 @@
   }
 }
 
-main,
-nav {
-  @apply max-w-7xl mx-auto py-6 px-6 h-24;
+main {
+  @apply max-w-7xl mx-auto py-6 px-6;
 }
 
 p {
