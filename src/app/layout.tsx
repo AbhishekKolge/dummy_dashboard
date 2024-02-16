@@ -2,15 +2,16 @@ import type { Metadata } from 'next';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 import { Inter } from 'next/font/google';
 
-import ThemeProvider from '@/provider/theme-provider';
+import Provider from '@/provider';
+import SideNav from '@/components/layout/side-nav';
 
 import './globals.css';
+
+const inter = Inter({ subsets: ['latin'] });
 
 if (process.env.ENV !== 'development') {
   disableReactDevTools();
 }
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Dakri Cartons | Abhishek',
@@ -26,15 +27,12 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
 
   return (
     <html lang='en'>
-      <body className={`${inter.className} relative min-h-screen`}>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main className='w-screen min-h-screen h-auto'>{children}</main>
-        </ThemeProvider>
+      <body className={`${inter.className} min-h-screen flex`}>
+        <Provider>
+          <SideNav>
+            <main className='w-screen min-h-screen'>{children}</main>
+          </SideNav>
+        </Provider>
       </body>
     </html>
   );
