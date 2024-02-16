@@ -11,10 +11,9 @@ const NotFound: React.FC = () => {
           {`Something's missing.`}
         </p>
         <p className='text-lg font-light text-gray-500'>
-          {`Sorry, we can't find that page. You'll find lots to explore on the
-            home page.`}
+          {`Sorry, we can't find that page. You'll find lots to explore on the dashboard.`}
         </p>
-        <Link href='/'>Back to Home</Link>
+        <Link href='/dashboard'>Back to Dashboard</Link>
       </div>
     </section>
   );
