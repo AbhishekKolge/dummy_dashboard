@@ -2,8 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LucideIcon, Settings } from 'lucide-react';
-import { ChevronRightIcon } from '@radix-ui/react-icons';
+import { Settings } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
@@ -35,17 +34,13 @@ const SideNav: React.FC<SideNavProps> = (props) => {
     <>
       <ResizablePanelGroup direction='horizontal'>
         <ResizablePanel
-          defaultSize={6}
+          defaultSize={7}
           collapsedSize={7}
           collapsible={true}
-          minSize={15}
-          maxSize={20}
-          onCollapse={(): void => {
-            setIsCollapsed(true);
-          }}
-          onExpand={(): void => {
-            setIsCollapsed(false);
-          }}
+          minSize={12}
+          maxSize={15}
+          onCollapse={setIsCollapsed.bind(null, true)}
+          onExpand={setIsCollapsed.bind(null, false)}
           className={cn(
             'bg-soil-brown-100 flex flex-col py-8 px-4',
             isCollapsed && 'transition-all duration-300 ease-in-out px-0'
@@ -73,7 +68,7 @@ const SideNav: React.FC<SideNavProps> = (props) => {
                           pathname === link.pathname && 'bg-soil-brown-200'
                         )}
                       >
-                        <link.icon className='h-5 w-5' />
+                        <link.icon className='h-6 w-6' />
                         <span className='sr-only'>{link.title}</span>
                       </Link>
                     </TooltipTrigger>
@@ -94,7 +89,7 @@ const SideNav: React.FC<SideNavProps> = (props) => {
                       pathname === link.pathname && 'bg-soil-brown-200'
                     )}
                   >
-                    <link.icon className='mr-2 h-5 w-5' />
+                    <link.icon className='mr-2 h-6 w-6' />
                     {link.title}
                   </Link>
                 )
@@ -115,7 +110,9 @@ const SideNav: React.FC<SideNavProps> = (props) => {
           </div>
         </ResizablePanel>
         <ResizableHandle withHandle />
-        <ResizablePanel defaultSize={80}>{children}</ResizablePanel>
+        <ResizablePanel defaultSize={93} maxSize={93} minSize={85}>
+          {children}
+        </ResizablePanel>
       </ResizablePanelGroup>
     </>
   );

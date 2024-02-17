@@ -7,7 +7,7 @@ import ReceptionSummary from '@/components/dashboard/reception-summary';
 
 const Dashboard: React.FC = () => {
   return (
-    <section className='grid grid-cols-5 gap-2'>
+    <section className='grid grid-cols-5 gap-4'>
       <div className='w-full col-span-3'>
         <RentalTools />
       </div>

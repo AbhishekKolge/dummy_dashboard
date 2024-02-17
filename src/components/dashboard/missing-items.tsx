@@ -7,7 +7,7 @@ const MissingItems: React.FC = () => {
     <Card>
       <CardHeader>
         <CardTitle>
-          <AlertTriangle fill='#fcd34d' strokeWidth={1} size={35} />
+          <AlertTriangle fill='#fcd34d' strokeWidth={1} size={28} />
           Missing Items
         </CardTitle>
       </CardHeader>
