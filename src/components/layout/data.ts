@@ -1,8 +1,26 @@
-import { Archive, ArchiveX, File, Inbox, Send, Trash2 } from 'lucide-react';
-import { LucideIcon } from 'lucide-react';
+import { Home, Wrench, FileCog, Sheet } from 'lucide-react';
 
-export const DATA: {
-  title: string;
-  label?: string;
-  icon: LucideIcon;
-}[] = [];
+import { NavLink } from './types';
+
+export const DATA: NavLink[] = [
+  {
+    title: 'Dashboard',
+    icon: Home,
+    pathname: '/dashboard',
+  },
+  {
+    title: 'Tools',
+    icon: Wrench,
+    pathname: '/tools',
+  },
+  {
+    title: 'Inventory',
+    icon: FileCog,
+    pathname: '/inventory',
+  },
+  {
+    title: 'Analytics',
+    icon: Sheet,
+    pathname: '/analytics',
+  },
+];
