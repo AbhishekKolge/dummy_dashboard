@@ -45,6 +45,7 @@ const SideNav: React.FC<SideNavProps> = (props) => {
             'bg-soil-brown-100 flex flex-col py-8 px-4',
             isCollapsed && 'transition-all duration-300 ease-in-out px-0'
           )}
+          tagName='aside'
         >
           <div className='flex justify-center'>
             <Logo isCollapsed={isCollapsed} />
