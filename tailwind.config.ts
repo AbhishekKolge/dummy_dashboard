@@ -21,6 +21,7 @@ const config = {
       'soil-brown-100': '#7f7272',
       'soil-brown-200': '#5c5252',
       'grey-100': '#d9d9d9',
+      'grey-200': '#AAAAAA',
     },
     extend: {
       colors: {
