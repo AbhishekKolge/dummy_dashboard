@@ -12,12 +12,12 @@ const Logo: React.FC<LogoProps> = (props) => {
   return (
     <Avatar
       className={cn(
-        'rounded-none w-20 h-20',
-        isCollapsed && 'w-full h-auto aspect-square'
+        'w-full h-16 rounded-none bg-grey-100',
+        isCollapsed && 'w-16'
       )}
     >
       <AvatarImage className='rounded-none' alt='logo' />
-      <AvatarFallback className='rounded-none' />
+      <AvatarFallback className='rounded-none bg-grey-100' />
     </Avatar>
   );
 };
