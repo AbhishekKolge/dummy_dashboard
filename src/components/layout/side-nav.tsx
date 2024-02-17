@@ -105,7 +105,7 @@ const SideNav: React.FC<SideNavProps> = (props) => {
               size='icon'
             >
               <Link href='#'>
-                <Settings strokeWidth={2.25} size={28} />
+                <Settings strokeWidth={2.25} className='h-7 w-7' />
               </Link>
             </Button>
           </div>
