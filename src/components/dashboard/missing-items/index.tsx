@@ -1,3 +1,4 @@
+import { unstable_noStore as noStore } from 'next/cache';
 import { AlertTriangle } from 'lucide-react';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,6 +7,7 @@ import MissingItemsTable from './table';
 import { getMissingItems } from '@/services';
 
 const MissingItems: React.FC = async () => {
+  noStore();
   const data = await getMissingItems();
 
   return (
