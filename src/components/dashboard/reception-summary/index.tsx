@@ -16,7 +16,7 @@ const ReceptionSummary: React.FC = async () => {
       </CardHeader>
       <CardContent
         data-title-bold={true}
-        className='px-6 pb-4 md:px-10 md:pb-8 pt-0'
+        className='px-6 pb-4 md:px-10 md:pb-8 pt-0 group'
       >
         <Information data={data} enableChart={false} />
       </CardContent>
