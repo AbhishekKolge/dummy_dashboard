@@ -42,7 +42,7 @@ const SideNav: React.FC<SideNavProps> = (props) => {
           onCollapse={setIsCollapsed.bind(null, true)}
           onExpand={setIsCollapsed.bind(null, false)}
           className={cn(
-            'bg-soil-brown-100 flex flex-col py-8 px-4',
+            'hidden lg:flex bg-soil-brown-100 flex-col py-8 px-4',
             isCollapsed && 'transition-all duration-300 ease-in-out px-0'
           )}
           tagName='aside'
@@ -110,7 +110,7 @@ const SideNav: React.FC<SideNavProps> = (props) => {
             </Button>
           </div>
         </ResizablePanel>
-        <ResizableHandle withHandle />
+        <ResizableHandle className='hidden lg:flex' withHandle />
         <ResizablePanel defaultSize={93} maxSize={93} minSize={85}>
           {children}
         </ResizablePanel>

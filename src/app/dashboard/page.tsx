@@ -15,33 +15,33 @@ import WorkOrderStatusLoading from '@/components/dashboard/work-order-status/loa
 
 const Dashboard: React.FC = () => {
   return (
-    <section className='grid grid-cols-5 gap-4'>
-      <div className='w-full h-full col-span-3'>
+    <section className='grid grid-cols-1 xl:grid-cols-5 gap-4'>
+      <div className='w-full h-full xl:col-span-3'>
         <Suspense fallback={<RentalToolsLoading />}>
           <RentalTools />
         </Suspense>
       </div>
-      <div className='w-full h-full col-span-2'>
+      <div className='w-full h-full xl:col-span-2'>
         <Suspense fallback={<WorkOrderStatusLoading />}>
           <WorkOrderStatus />
         </Suspense>
       </div>
-      <div className='w-full h-full col-span-2'>
+      <div className='w-full h-full xl:col-span-2'>
         <Suspense fallback={<MissingItemsLoading />}>
           <MissingItems />
         </Suspense>
       </div>
-      <div className='w-full h-full col-span-3'>
+      <div className='w-full h-full xl:col-span-3'>
         <Suspense fallback={<ToolsEquipmentAvailabilityLoading />}>
           <ToolsEquipmentsAvailability />
         </Suspense>
       </div>
-      <div className='w-full h-full col-span-3'>
+      <div className='w-full h-full xl:col-span-3'>
         <Suspense fallback={<RestockItemsLoading />}>
           <RestockItems />
         </Suspense>
       </div>
-      <div className='w-full h-full col-span-2'>
+      <div className='w-full h-full xl:col-span-2'>
         <Suspense fallback={<ReceptionSummaryLoading />}>
           <ReceptionSummary />
         </Suspense>

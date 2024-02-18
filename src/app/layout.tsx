@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 
 import Provider from '@/provider';
 import SideNav from '@/components/layout/side-nav';
+import SideDrawer from '@/components/layout/side-drawer';
 
 import './globals.css';
 
@@ -29,8 +30,11 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
     <html lang='en'>
       <body className={`${inter.className} min-h-screen`}>
         <Provider>
+          <SideDrawer />
           <SideNav>
-            <main className='h-screen overflow-y-scroll'>{children}</main>
+            <main className='h-screen overflow-y-scroll pt-28 lg:py-6'>
+              {children}
+            </main>
           </SideNav>
         </Provider>
       </body>
