@@ -58,16 +58,19 @@ const renderLegend = (props: any) => {
   const { payload } = props;
 
   return (
-    <div className='grid w-[200px] divide-y'>
+    <div className='grid sm:grid-cols-3 sm:gap-2 md:gap-0 md:grid-cols-1 md:w-[200px] md:divide-y'>
       {payload.map((item: any, index: number) => {
         return (
-          <div key={index} className='flex items-center gap-2 py-1.5'>
+          <div
+            key={index}
+            className='flex sm:justify-center md:justify-start items-center gap-2 py-1.5'
+          >
             <div
               style={{ backgroundColor: item.color }}
               className='w-3 h-3 rounded-full'
             ></div>
             <div className='text-xs'>{item.value}</div>
-            <div className='text-xs font-semibold ml-auto'>
+            <div className='hidden md:block text-xs font-semibold ml-auto'>
               {item.payload.value}
             </div>
           </div>
@@ -84,6 +87,12 @@ const PieInformation: React.FC<{ data: WorkOrderStatus[] }> = (props) => {
   const activeIndexHandler = (_: unknown, index: number) => {
     setActiveIndex(index);
   };
+
+  let isMobile = false;
+
+  if (typeof window !== undefined) {
+    isMobile = window.innerWidth <= 768;
+  }
 
   return (
     <ResponsiveContainer width='100%' height='100%'>
@@ -105,8 +114,8 @@ const PieInformation: React.FC<{ data: WorkOrderStatus[] }> = (props) => {
         </Pie>
         <Legend
           content={renderLegend}
-          layout='vertical'
-          verticalAlign='middle'
+          layout={isMobile ? 'horizontal' : 'vertical'}
+          verticalAlign={isMobile ? 'bottom' : 'middle'}
           align='right'
         />
       </PieChart>

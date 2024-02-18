@@ -11,7 +11,7 @@ const ToolsEquipmentsAvailability: React.FC = async () => {
       <CardHeader>
         <CardTitle>Tools and Equipments Availability</CardTitle>
       </CardHeader>
-      <CardContent className='px-10 pb-8 pt-0 group'>
+      <CardContent className='px-6 pb-4 md:px-10 md:pb-8 pt-0 group'>
         <Information data={data} enableChart={true} />
       </CardContent>
     </Card>

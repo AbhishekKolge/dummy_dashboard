@@ -9,7 +9,10 @@ const Information: React.FC<InformationProps> = (props) => {
     <div className='grid gap-1 group-[[data-title-bold=true]]:gap-6'>
       {data.map((item, index) => {
         return (
-          <div key={index} className='flex items-center justify-between'>
+          <div
+            key={index}
+            className='flex flex-col gap-2 md:flex-row items-center justify-between'
+          >
             <div>
               <item.icon size={46} strokeWidth={1.2} />
             </div>

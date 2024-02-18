@@ -16,7 +16,7 @@ const RentalTools: React.FC = async () => {
           Rental Tools
         </CardTitle>
       </CardHeader>
-      <CardContent className='px-10 pb-8 pt-0'>
+      <CardContent className='px-6 pb-4 md:px-10 md:pb-8 pt-0'>
         <RentalToolsTable data={data} />
       </CardContent>
     </Card>

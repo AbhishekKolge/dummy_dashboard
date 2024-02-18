@@ -12,7 +12,7 @@ const WorkOrderStatus: React.FC = async () => {
       </CardHeader>
       <CardContent
         data-title-bold={true}
-        className='px-10 pb-8 pt-0 w-full w-min-[400px] h-[200px]'
+        className='px-6 pb-4 md:px-10 md:pb-8 pt-0 w-full w-min-[400px] h-[300px] md:h-[200px]'
       >
         <PieInformation data={data} />
       </CardContent>
