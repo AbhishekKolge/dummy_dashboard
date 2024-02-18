@@ -1,10 +1,11 @@
-import { Wrench, FileCog } from 'lucide-react';
+import { Wrench, FileCog, PackagePlus, PackageMinus } from 'lucide-react';
 
 import {
   RentalTool,
   MissingItems,
   RestockItems,
   ToolsEquipmentAvailability,
+  WorkOrderStatus,
 } from './types';
 
 export const RENTAL_TOOLS_DATA: RentalTool[] = [
@@ -106,5 +107,33 @@ export const TOOLS_EQUIPMENT_AVAILABILITY_DATA: ToolsEquipmentAvailability[] = [
     count: 750,
     total: 1000,
     icon: FileCog,
+  },
+];
+
+export const RECEPTION_SUMMARY_DATA: ToolsEquipmentAvailability[] = [
+  {
+    name: 'Packaged Received',
+    count: 10,
+    icon: PackageMinus,
+  },
+  {
+    name: 'Processed Packages',
+    count: 5,
+    icon: PackagePlus,
+  },
+];
+
+export const WORK_ORDER_STATUS_DATA: WorkOrderStatus[] = [
+  {
+    name: 'Completed',
+    count: 7,
+  },
+  {
+    name: 'Work In Progress',
+    count: 3,
+  },
+  {
+    name: 'Due',
+    count: 2,
   },
 ];
