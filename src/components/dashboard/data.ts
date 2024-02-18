@@ -1,4 +1,4 @@
-import { RentalTool } from './types';
+import { RentalTool, MissingItems, RestockItems } from './types';
 
 export const RENTAL_TOOLS_DATA: RentalTool[] = [
   {
@@ -36,5 +36,53 @@ export const RENTAL_TOOLS_DATA: RentalTool[] = [
     },
     workStatus: 'notStarted',
     duration: 0,
+  },
+];
+
+export const MISSING_ITEMS_DATA: MissingItems[] = [
+  {
+    toolRef: 6465,
+    member: {
+      firstName: 'Alex',
+      lastName: 'Noman',
+      profileImage: 'https://randomuser.me/api/portraits/men/1.jpg',
+      level: 1,
+    },
+  },
+  {
+    toolRef: 6466,
+    member: {
+      firstName: 'Alex',
+      lastName: 'Noman',
+      profileImage: 'https://randomuser.me/api/portraits/men/1.jpg',
+      level: 1,
+    },
+  },
+  {
+    toolRef: 6467,
+    member: {
+      firstName: 'Alex',
+      lastName: 'Noman',
+      profileImage: 'https://randomuser.me/api/portraits/men/1.jpg',
+      level: 1,
+    },
+  },
+];
+
+export const RESTOCK_ITEMS_DATA: RestockItems[] = [
+  {
+    toolRef: 6465,
+    toolOrEquipment: 'Screws',
+    status: 'low',
+  },
+  {
+    toolRef: 5665,
+    toolOrEquipment: 'Wires (electrical)',
+    status: 'none',
+  },
+  {
+    toolRef: 1755,
+    toolOrEquipment: 'Bolts',
+    status: 'none',
   },
 ];
