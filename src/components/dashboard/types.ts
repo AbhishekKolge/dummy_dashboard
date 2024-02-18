@@ -14,3 +14,11 @@ export interface RentalTool {
   workStatus: WorkStatus;
   duration: number;
 }
+
+export interface ActionButtonProps {
+  children: React.ReactNode;
+}
+
+export interface StatusProps {
+  type: WorkStatus;
+}
