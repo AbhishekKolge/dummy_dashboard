@@ -1,4 +1,11 @@
-import { RentalTool, MissingItems, RestockItems } from './types';
+import { Wrench, FileCog } from 'lucide-react';
+
+import {
+  RentalTool,
+  MissingItems,
+  RestockItems,
+  ToolsEquipmentAvailability,
+} from './types';
 
 export const RENTAL_TOOLS_DATA: RentalTool[] = [
   {
@@ -84,5 +91,20 @@ export const RESTOCK_ITEMS_DATA: RestockItems[] = [
     toolRef: 1755,
     toolOrEquipment: 'Bolts',
     status: 'none',
+  },
+];
+
+export const TOOLS_EQUIPMENT_AVAILABILITY_DATA: ToolsEquipmentAvailability[] = [
+  {
+    name: 'Rental Items',
+    count: 500,
+    total: 1000,
+    icon: Wrench,
+  },
+  {
+    name: 'Spare Parts',
+    count: 750,
+    total: 1000,
+    icon: FileCog,
   },
 ];

@@ -1,3 +1,5 @@
+import { LucideIcon } from 'lucide-react';
+
 export interface Member {
   firstName: string;
   lastName: string;
@@ -34,4 +36,26 @@ export interface ActionButtonProps {
 
 export interface StatusProps {
   type: WorkStatus | StockStatus;
+}
+
+export interface ToolsEquipmentAvailability {
+  name: String;
+  count: number;
+  total: number;
+  icon: LucideIcon;
+}
+
+export interface InformationProps {
+  data: ToolsEquipmentAvailability[];
+  enableChart?: boolean;
+}
+
+export interface DonutChartProps {
+  count: number;
+  total: number;
+}
+
+export interface CustomLabelProps {
+  viewBox?: { cx: number; cy: number };
+  value: string;
 }
