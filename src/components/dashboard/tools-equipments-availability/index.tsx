@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getToolsEquipmentsAvailability } from '@/services';
 import Information from '../common/information';
 
-const ToolsEquipmentsAvailability: React.FC = async (props) => {
+const ToolsEquipmentsAvailability: React.FC = async () => {
   const data = await getToolsEquipmentsAvailability();
 
   return (
