@@ -1,10 +1,14 @@
+import { unstable_noStore as noStore } from 'next/cache';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import RestockItemsTable from './table';
 
 import { getRestockItems } from '@/services';
 
 const RestockItems: React.FC = async () => {
+  noStore();
   const data = await getRestockItems();
+
   return (
     <Card>
       <CardHeader>

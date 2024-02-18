@@ -1,3 +1,4 @@
+import { unstable_noStore as noStore } from 'next/cache';
 import { Wrench } from 'lucide-react';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,6 +7,7 @@ import RentalToolsTable from './table';
 import { getRentalTools } from '@/services';
 
 const RentalTools: React.FC = async () => {
+  noStore();
   const data = await getRentalTools();
 
   return (

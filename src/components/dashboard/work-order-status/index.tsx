@@ -1,10 +1,14 @@
+import { unstable_noStore as noStore } from 'next/cache';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 import { getWorkOrderStatus } from '@/services';
 import PieInformation from '@/components/charts/pie';
 
 const WorkOrderStatus: React.FC = async () => {
+  noStore();
   const data = await getWorkOrderStatus();
+
   return (
     <Card>
       <CardHeader>

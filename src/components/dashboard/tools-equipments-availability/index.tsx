@@ -1,9 +1,12 @@
+import { unstable_noStore as noStore } from 'next/cache';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 import { getToolsEquipmentsAvailability } from '@/services';
 import Information from '../common/information';
 
 const ToolsEquipmentsAvailability: React.FC = async () => {
+  noStore();
   const data = await getToolsEquipmentsAvailability();
 
   return (
