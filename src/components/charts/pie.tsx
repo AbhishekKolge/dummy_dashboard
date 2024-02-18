@@ -90,7 +90,7 @@ const PieInformation: React.FC<{ data: WorkOrderStatus[] }> = (props) => {
 
   let isMobile = false;
 
-  if (typeof window !== undefined) {
+  if (typeof window === 'object') {
     isMobile = window.innerWidth <= 768;
   }
 
