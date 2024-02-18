@@ -40,7 +40,6 @@ const DonutChart: React.FC<DonutChartProps> = (props) => {
           cy='50%'
           innerRadius={25}
           outerRadius={35}
-          fill='#8884d8'
           dataKey='value'
         >
           <Label

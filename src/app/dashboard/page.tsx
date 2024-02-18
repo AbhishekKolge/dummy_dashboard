@@ -10,6 +10,8 @@ import RentalToolsLoading from '@/components/dashboard/rental-tools/loading';
 import MissingItemsLoading from '@/components/dashboard/missing-items/loading';
 import RestockItemsLoading from '@/components/dashboard/restock-items/loading';
 import ToolsEquipmentAvailabilityLoading from '@/components/dashboard/tools-equipments-availability/loading';
+import ReceptionSummaryLoading from '@/components/dashboard/reception-summary/loading';
+import WorkOrderStatusLoading from '@/components/dashboard/work-order-status/loading';
 
 const Dashboard: React.FC = () => {
   return (
@@ -20,7 +22,9 @@ const Dashboard: React.FC = () => {
         </Suspense>
       </div>
       <div className='w-full h-full col-span-2'>
-        <WorkOrderStatus />
+        <Suspense fallback={<WorkOrderStatusLoading />}>
+          <WorkOrderStatus />
+        </Suspense>
       </div>
       <div className='w-full h-full col-span-2'>
         <Suspense fallback={<MissingItemsLoading />}>
@@ -38,7 +42,9 @@ const Dashboard: React.FC = () => {
         </Suspense>
       </div>
       <div className='w-full h-full col-span-2'>
-        <ReceptionSummary />
+        <Suspense fallback={<ReceptionSummaryLoading />}>
+          <ReceptionSummary />
+        </Suspense>
       </div>
     </section>
   );
