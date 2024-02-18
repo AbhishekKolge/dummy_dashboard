@@ -17,6 +17,6 @@ export const getMissingItems = async () => {
 };
 
 export const getRestockItems = async () => {
-  await wait(1000);
+  await wait(2000);
   return RESTOCK_ITEMS_DATA;
 };

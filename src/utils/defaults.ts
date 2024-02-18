@@ -26,4 +26,12 @@ export const STATUS = {
     color: '#d97706',
     text: 'on hold',
   },
+  none: {
+    color: '#dc2626',
+    text: 'none',
+  },
+  low: {
+    color: '#d97706',
+    text: 'low',
+  },
 };
