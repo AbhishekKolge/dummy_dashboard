@@ -1,8 +1,13 @@
 import { AlertTriangle } from 'lucide-react';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import MissingItemsTable from './table';
 
-const MissingItems: React.FC = () => {
+import { getMissingItems } from '@/services';
+
+const MissingItems: React.FC = async () => {
+  const data = await getMissingItems();
+
   return (
     <Card>
       <CardHeader>
@@ -11,7 +16,9 @@ const MissingItems: React.FC = () => {
           Missing Items
         </CardTitle>
       </CardHeader>
-      <CardContent></CardContent>
+      <CardContent className='px-10 pb-8 pt-0'>
+        <MissingItemsTable data={data} />
+      </CardContent>
     </Card>
   );
 };
