@@ -39,9 +39,9 @@ export interface StatusProps {
 }
 
 export interface ToolsEquipmentAvailability {
-  name: String;
+  name: string;
   count: number;
-  total: number;
+  total?: number;
   icon: LucideIcon;
 }
 
@@ -58,4 +58,9 @@ export interface DonutChartProps {
 export interface CustomLabelProps {
   viewBox?: { cx: number; cy: number };
   value: string;
+}
+
+export interface WorkOrderStatus {
+  name: string;
+  count: number;
 }
