@@ -12,11 +12,11 @@ const RentalTools: React.FC = async () => {
     <Card>
       <CardHeader>
         <CardTitle>
-          <Wrench strokeWidth={1.4} size={35} />
+          <Wrench strokeWidth={1.4} size={45} />
           Rental Tools
         </CardTitle>
       </CardHeader>
-      <CardContent className='px-12 pb-8 pt-0'>
+      <CardContent className='px-10 pb-8 pt-0'>
         <RentalToolsTable data={data} />
       </CardContent>
     </Card>
