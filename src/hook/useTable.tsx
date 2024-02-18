@@ -1,8 +1,12 @@
 'use client';
 import { useState, useCallback } from 'react';
 
-import { RentalTool } from '@/components/dashboard/types';
-import { UseTableReturn, UseTableParamsType, CreateTableType } from './types';
+import {
+  UseTableReturn,
+  UseTableParamsType,
+  CreateTableType,
+  CreateRowType,
+} from './types';
 
 import {
   Table,
@@ -16,23 +20,46 @@ import {
 const useTable = (data: UseTableParamsType): UseTableReturn => {
   const [table, setTable] = useState<JSX.Element | null>(null);
 
-  const createTable = useCallback<CreateTableType>((columns) => {
-    const headers = columns.map((column) => {
-      return <TableHead key={column.id}>{column.title}</TableHead>;
-    });
-    const rows = null;
-
-    const structure = (
-      <Table>
-        <TableHeader>
-          <TableRow>{headers}</TableRow>
-        </TableHeader>
-        <TableBody>{rows}</TableBody>
-      </Table>
+  const createRow: CreateRowType = (rows, columns) => {
+    return (
+      <TableRow>
+        {Object.entries(rows).map(([key, value]) => {
+          return (
+            <TableCell key={key} className='font-medium'>
+              {columns[key].row(value)}
+            </TableCell>
+          );
+        })}
+        {columns.action && (
+          <TableCell className='font-medium'>{columns.action.row()}</TableCell>
+        )}
+      </TableRow>
     );
+  };
 
-    setTable(structure);
-  }, []);
+  const createTable = useCallback<CreateTableType>(
+    (columns) => {
+      const headers = Object.entries(columns).map(([_, value]) => {
+        return <TableHead key={value.id}>{value.title}</TableHead>;
+      });
+
+      const structure = (
+        <Table>
+          <TableHeader>
+            <TableRow>{headers}</TableRow>
+          </TableHeader>
+          <TableBody>
+            {data.map((rows) => {
+              return createRow(rows, columns);
+            })}
+          </TableBody>
+        </Table>
+      );
+
+      setTable(structure);
+    },
+    [data]
+  );
 
   return { createTable, table };
 };
