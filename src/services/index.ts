@@ -25,7 +25,7 @@ export const getRestockItems = async () => {
 };
 
 export const getToolsEquipmentsAvailability = async () => {
-  await wait(3000);
+  await wait(2700);
   return TOOLS_EQUIPMENT_AVAILABILITY_DATA;
 };
 
