@@ -9,7 +9,7 @@ const ActionButton: React.FC<ActionButtonProps> = (props) => {
   return (
     <Button
       asChild
-      className='shadow-none font-light px-4 h-7 rounded-sm bg-tertiary'
+      className='shadow-none font-light px-4 h-7 rounded-sm bg-tertiary hover:bg-tertiary'
       size='sm'
     >
       <Link href='#'>{children}</Link>
