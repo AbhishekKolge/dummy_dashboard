@@ -1,8 +1,13 @@
 import { Wrench } from 'lucide-react';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import DashboardTable from '../common/table';
 
-const RentalTools: React.FC = () => {
+import { getRentalTools } from '@/services';
+
+const RentalTools: React.FC = async () => {
+  const data = await getRentalTools();
+
   return (
     <Card>
       <CardHeader>
@@ -11,7 +16,9 @@ const RentalTools: React.FC = () => {
           Rental Tools
         </CardTitle>
       </CardHeader>
-      <CardContent></CardContent>
+      <CardContent>
+        <DashboardTable />
+      </CardContent>
     </Card>
   );
 };

@@ -45,6 +45,7 @@ const SideNav: React.FC<SideNavProps> = (props) => {
             'bg-soil-brown-100 flex flex-col py-8 px-4',
             isCollapsed && 'transition-all duration-300 ease-in-out px-0'
           )}
+          tagName='aside'
         >
           <div className='flex justify-center'>
             <Logo isCollapsed={isCollapsed} />
@@ -104,7 +105,7 @@ const SideNav: React.FC<SideNavProps> = (props) => {
               size='icon'
             >
               <Link href='#'>
-                <Settings strokeWidth={2.25} size={28} />
+                <Settings strokeWidth={2.25} className='h-7 w-7' />
               </Link>
             </Button>
           </div>
