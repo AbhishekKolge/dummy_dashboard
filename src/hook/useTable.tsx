@@ -40,7 +40,11 @@ const useTable = (data: UseTableParamsType): UseTableReturn => {
   const createTable = useCallback<CreateTableType>(
     (columns) => {
       const headers = Object.entries(columns).map(([_, value]) => {
-        return <TableHead key={value.id}>{value.title}</TableHead>;
+        return (
+          <TableHead className='font-light text-xs' key={value.id}>
+            {value.title}
+          </TableHead>
+        );
       });
 
       const structure = (
