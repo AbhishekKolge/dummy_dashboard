@@ -31,7 +31,9 @@ const useTable = (data: UseTableParamsType): UseTableReturn => {
           );
         })}
         {columns.action && (
-          <TableCell className='font-medium'>{columns.action.row()}</TableCell>
+          <TableCell className='font-medium text-right'>
+            {columns.action.row()}
+          </TableCell>
         )}
       </TableRow>
     );
