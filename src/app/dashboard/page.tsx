@@ -7,6 +7,7 @@ import ToolsEquipmentsAvailability from '@/components/dashboard/tools-equipments
 import RestockItems from '@/components/dashboard/restock-items';
 import ReceptionSummary from '@/components/dashboard/reception-summary';
 import RentalToolsLoading from '@/components/dashboard/rental-tools/loading';
+import MissingItemsLoading from '@/components/dashboard/missing-items/loading';
 
 const Dashboard: React.FC = () => {
   return (
@@ -20,7 +21,9 @@ const Dashboard: React.FC = () => {
         <WorkOrderStatus />
       </div>
       <div className='w-full col-span-2'>
-        <MissingItems />
+        <Suspense fallback={<MissingItemsLoading />}>
+          <MissingItems />
+        </Suspense>
       </div>
       <div className='w-full col-span-3'>
         <ToolsEquipmentsAvailability />

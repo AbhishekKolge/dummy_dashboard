@@ -7,6 +7,8 @@ export interface Member {
 
 export type WorkStatus = 'completed' | 'inProgress' | 'notStarted' | 'onHold';
 
+export type StockStatus = 'low' | 'none';
+
 export interface RentalTool {
   order: number;
   toolRef: number;
@@ -15,10 +17,21 @@ export interface RentalTool {
   duration: number;
 }
 
+export interface MissingItems {
+  toolRef: number;
+  member: Member;
+}
+
+export interface RestockItems {
+  toolRef: number;
+  toolOrEquipment: string;
+  status: StockStatus;
+}
+
 export interface ActionButtonProps {
   children: React.ReactNode;
 }
 
 export interface StatusProps {
-  type: WorkStatus;
+  type: WorkStatus | StockStatus;
 }

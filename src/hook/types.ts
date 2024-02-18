@@ -1,11 +1,15 @@
-import { RentalTool } from '@/components/dashboard/types';
+import {
+  RentalTool,
+  MissingItems,
+  RestockItems,
+} from '@/components/dashboard/types';
 
 export interface UseTableReturn {
   createTable: CreateTableType;
   table: JSX.Element | null;
 }
 
-export type UseTableParamsType = RentalTool[];
+export type UseTableParamsType = RentalTool[] | MissingItems[] | RestockItems[];
 
 export interface CreateTableParams {
   [key: string]: {
@@ -18,6 +22,6 @@ export interface CreateTableParams {
 export type CreateTableType = (columns: CreateTableParams) => void;
 
 export type CreateRowType = (
-  rows: RentalTool,
+  rows: RentalTool | MissingItems | RestockItems,
   columns: CreateTableParams
 ) => JSX.Element;
