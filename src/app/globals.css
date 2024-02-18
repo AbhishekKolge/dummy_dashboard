@@ -82,7 +82,11 @@
 }
 
 main {
-  @apply max-w-7xl mx-auto py-6 px-6;
+  @apply py-6 px-6;
+}
+
+section {
+  @apply max-w-7xl mx-auto;
 }
 
 p {
