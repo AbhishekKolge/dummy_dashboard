@@ -8,8 +8,16 @@ export interface UseTableReturn {
 export type UseTableParamsType = RentalTool[];
 
 export interface CreateTableParams {
-  id: number;
-  title: string;
+  [key: string]: {
+    id: number;
+    title: string;
+    row: (item?: any) => JSX.Element;
+  };
 }
 
-export type CreateTableType = (columns: CreateTableParams[]) => void;
+export type CreateTableType = (columns: CreateTableParams) => void;
+
+export type CreateRowType = (
+  rows: RentalTool,
+  columns: CreateTableParams
+) => JSX.Element;
