@@ -30,7 +30,7 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
       <body className={`${inter.className} min-h-screen`}>
         <Provider>
           <SideNav>
-            <main className='max-h-screen overflow-y-scroll'>{children}</main>
+            <main className='h-screen overflow-y-scroll'>{children}</main>
           </SideNav>
         </Provider>
       </body>
