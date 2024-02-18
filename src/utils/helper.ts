@@ -1,4 +1,4 @@
-import { WAIT_DURATION } from './defaults';
+import { WAIT_DURATION, ONE_MINUTE, ONE_SECOND } from './defaults';
 
 export const getInitials = (str: string): string => {
   const words = str.split(' ');
@@ -14,4 +14,15 @@ export const wait = (duration: number = WAIT_DURATION): Promise<void> => {
 
 export const minimumTwoDigits = (num: number): string => {
   return String(num).padStart(2, '0');
+};
+
+export const millisecondsToMinutes = (milliseconds: number): string => {
+  const minutes: string = minimumTwoDigits(
+    Math.floor(milliseconds / ONE_MINUTE)
+  );
+  const seconds: string = minimumTwoDigits(
+    Math.floor((milliseconds % ONE_MINUTE) / ONE_SECOND)
+  );
+
+  return `${minutes}:${seconds}`;
 };
