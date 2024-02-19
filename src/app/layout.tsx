@@ -28,11 +28,11 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
 
   return (
     <html lang='en'>
-      <body className={`${inter.className} min-h-screen`}>
+      <body className={`${inter.className} min-h-dvh`}>
         <Provider>
           <SideDrawer />
           <SideNav>
-            <main className='h-screen overflow-y-scroll pt-28 lg:py-6'>
+            <main className='h-dvh overflow-y-scroll pt-28 lg:py-6'>
               {children}
             </main>
           </SideNav>
